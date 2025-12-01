@@ -2,7 +2,99 @@
 
 ## E-commerce Development Guide Overview
 
-This guide provides a comprehensive overview of E-commerce development best practices, architecture patterns, and implementation strategies.
+This guide provides a comprehensive overview of E-commerce development best practices, architecture patterns, and implementation strategies. **This repository includes a complete Node.js/Express implementation of an E-commerce backend API.**
+
+## Quick Start
+
+```bash
+# Install dependencies
+npm install
+
+# Copy environment configuration
+cp .env.example .env
+
+# Start development server
+npm run dev
+
+# Run tests
+npm test
+```
+
+## API Endpoints
+
+### Products
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/products` | Get all products (with filtering, pagination) |
+| GET | `/api/products/:id` | Get single product |
+| POST | `/api/products` | Create product (Admin) |
+| PUT | `/api/products/:id` | Update product (Admin) |
+| DELETE | `/api/products/:id` | Delete product (Admin) |
+
+### Users
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/users/register` | Register new user |
+| POST | `/api/users/login` | Login user |
+| GET | `/api/users/profile` | Get user profile |
+| PUT | `/api/users/profile` | Update profile |
+
+### Cart
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/cart` | Get user's cart |
+| POST | `/api/cart/items` | Add item to cart |
+| PUT | `/api/cart/items/:productId` | Update item quantity |
+| DELETE | `/api/cart/items/:productId` | Remove item from cart |
+
+### Orders
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/orders` | Create order from cart |
+| GET | `/api/orders` | Get user's orders |
+| GET | `/api/orders/:id` | Get single order |
+| POST | `/api/orders/:id/cancel` | Cancel order |
+
+### Reviews
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/reviews/product/:productId` | Get product reviews |
+| POST | `/api/reviews/product/:productId` | Create review |
+| PUT | `/api/reviews/:id` | Update review |
+| DELETE | `/api/reviews/:id` | Delete review |
+
+## Project Structure
+
+```
+src/
+├── app.js                 # Application entry point
+├── config/
+│   └── database.js        # MongoDB connection
+├── controllers/           # Request handlers
+│   ├── productController.js
+│   ├── userController.js
+│   ├── cartController.js
+│   ├── orderController.js
+│   └── reviewController.js
+├── middleware/            # Custom middleware
+│   ├── auth.js            # Authentication & authorization
+│   └── validation.js      # Input validation rules
+├── models/                # Mongoose schemas
+│   ├── Product.js
+│   ├── User.js
+│   ├── Cart.js
+│   ├── Order.js
+│   └── Review.js
+├── routes/                # API routes
+│   ├── productRoutes.js
+│   ├── userRoutes.js
+│   ├── cartRoutes.js
+│   ├── orderRoutes.js
+│   └── reviewRoutes.js
+└── utils/                 # Utility functions
+```
+
+---
 
 ### Table of Contents
 
