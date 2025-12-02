@@ -1,4 +1,4 @@
-# E-commerce-development-
+# E-commerce-development
 
 ## E-commerce Development Guide Overview
 
